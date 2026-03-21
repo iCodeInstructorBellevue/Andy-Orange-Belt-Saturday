@@ -1,0 +1,54 @@
+<html>
+    <header><title>Title</title></header>
+    <body>
+        <style>
+            #side-mover {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+            }
+            #side-mover > * {
+                padding: 20px;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                height: 1000px;
+            }
+
+            #rect-list {
+                display: flex;
+                flex-direction: row;
+            }
+            #rect {
+                height: 100px;
+                width: 100px;
+                background-color: red;
+            }
+            #rect-2 {
+                height: 100px;
+                width: 100px;
+                background-color: cyan;
+            }
+        </style>
+
+
+        <div id="rect-list">
+            <div id="rect"></div>
+            <div id="rect-2"></div>
+            <div id="rect-3"></div>
+            <div id="rect-4"></div>
+        </div>
+
+
+
+        <div id="side-mover"> 
+            <div>
+                <h1>Cart</h1>
+                <button>Cart Checkout</button>
+                <p>something</p>
+                <p>5 dollaer</p>
+                <p>????</p>
+                <p>10 dollaer</p>
+            </div>
+        </div>
+    </body>
+</html>

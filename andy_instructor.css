@@ -1,0 +1,179 @@
+:root {
+    --my-variable-name: blue;
+    --rectangle-color: pink; 
+
+    --rectange-width: 1000000000000px;
+    --rectange-height: 1000000000000px;
+}
+
+
+#Store_Grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#Store_Grid img {
+    width: 150px;
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+            #taskbar {
+                background-color: gray;
+                width: 100%;
+                height: 50px;
+
+                display: flex;
+                align-items: center;
+            }
+            #taskbar > div {
+                margin-left: 15px;
+                margin-right: 15px;
+
+                background-color: red;
+                height: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                border: 2px solid transparent;
+                box-sizing: border-box;
+            }
+            #taskbar > div:hover {
+                background-color: orange;
+                border-color: green;
+            }
+            #taskbar > div:hover > p {
+                color: white;
+            }
+            
+            #taskbar > div > p {
+                font-family: Verdana;
+            }
+
+            #searchbar {
+                height: 70%;
+            }
+
+            #the-list {
+                position: fixed;
+                top: 0;
+
+                display: flex;
+                flex-direction: column;
+                background-color: bisque;
+
+                padding: 20px;
+                width: 20vw;
+                height: 100vh;
+
+                overflow: scroll;
+            }
+
+            #the-list-mover {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+            }
+
+            #the-list > p {
+                font-size: 20px;
+            }
+
+            #store-grid {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: 50vw;
+            }
+
+            #store-grid > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: lightslategray;
+                padding: 5px;
+                margin: 10px;
+            }
+
+            #store-grid > div > img {
+                width: 100%;
+            }
+
+            #store-grid > div > p > span {
+                background-color: aquamarine;
+            }
+
+            #buy-button {
+                padding: 5px;
+                font-size: 20px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                background-color: mediumseagreen;
+                border: 2px dashed black;
+            }
+
+#store-grid > div > button {
+    font-size: 20px;
+    background-color: black;
+    color:white;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+}
+
+#store-grid > div > button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+                .search-res-button {
+                    border-radius: 10px;
+                    background-color: lightgray;
+                    text-align: center;
+                    width: 50%;
+                }
+                .search-res-button:hover {
+                    cursor: pointer;
+                }
+                .cart-entry {
+                    border-radius: 10px;
+                    background-color: white;
+                    text-align: center;
+                }
+
+
+
+#some-rectangle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+
+    border: 5px solid gray;
+}
+
+#some-rectangle p {
+    color: green;
+    font-size: x-large;
+}
+
+#checkout-window {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+
+    width: 90vw;
+    height: 90vh;
+
+    background-color: white;
+    box-shadow: 0px 0px 100px gray;
+}
+
+#checkout-window-robux-scam {
+    width: 80%;
+    height: 80%;
+}

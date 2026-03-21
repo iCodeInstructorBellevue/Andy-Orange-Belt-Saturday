@@ -1,0 +1,234 @@
+<html>
+    <head>
+        <title>Hi</title>
+    </head>
+    <body>
+        <script src="./store.js"></script>
+        <script>
+            function boo() {
+                //alert("BOOOOOOOOOO");
+                let newThing = document.createElement("p")
+                let text = document.createTextNode("Hi")
+                newThing.appendChild(text)
+
+                let newImg = document.createElement("img")
+                newImg.src = "https://shop.smallpetselect.com/cdn/shop/products/pinecone-product_1024x1024_91bbc362-ffbd-4814-9537-67779a01942e.jpg?v=1741870863"
+
+                let theList = document.getElementById("the-list")
+                theList.appendChild(newThing)
+                theList.appendChild(newImg)
+            }
+
+            function clickBuy() {
+                alert("hi")
+            }
+
+            function addToCart(eventIn) {
+                let newThing = document.createElement("p")
+                let text = document.createTextNode(eventIn.target.parentNode.children[1].children[0].innerHTML)
+                newThing.appendChild(text)
+
+                let theList = document.getElementById("the-list")
+                theList.appendChild(newThing)
+            }
+
+            const itemList = [
+                {name: "bROWN aNT", price: 5.67},
+                {name: "Green Ant", price: 0.99},
+                {name: "Not an Ant", price: 292.10},
+                {name: "Not free Robux", price: 999999999999999999.00},
+                {name: "Flipper One", price: 0.50},
+                {name: "Gas", price: 3.40}
+            ]
+
+            function searchResultClick(itemIn) {
+                let newCartEntry = document.createElement("div")
+                newCartEntry.className = "cart-entry"
+                newCartEntry.src = searchbar.value
+
+                let newCartItemName = document.createElement("p")
+                newCartItemName.appendChild(document.createTextNode(itemIn.name))
+                let newCartItemPrice = document.createElement("p")
+                newCartItemPrice.appendChild(document.createTextNode(itemIn.price))
+                newCartEntry.appendChild(newCartItemName)
+                newCartEntry.appendChild(newCartItemPrice)
+
+                let theList = document.getElementById("the-list")
+                theList.appendChild(newCartEntry)
+            }
+
+            function searchFunc(eventIn) {
+                let searchbar = document.getElementById("searchbar")
+
+                let subList = itemList.filter(elem => {
+                    return elem.name.toLowerCase().includes(searchbar.value.toLowerCase())
+                })
+                if (searchbar.value.length == 0) {
+                    subList = []
+                }
+
+                let searchResults = document.getElementById("search-results")
+                searchResults.replaceChildren()
+
+
+                for (let item of subList) {
+                    let newSearchResultButton = document.createElement("div")
+                    newSearchResultButton.className = "search-res-button"
+ 
+                    newSearchResultButton.innerText = item.name
+                     newSearchResultButton.addEventListener("click", function () {
+                        searchResultClick(item)
+                     })
+
+                    searchResults.appendChild(newSearchResultButton)
+                }
+
+
+                
+                /*if (eventIn.key === "Enter") {
+                    let searchbar = document.getElementById("searchbar")
+                    
+                    let newImg = document.createElement("img")
+                    newImg.src = searchbar.value
+                    newImg.style.width = "100px"
+                    newImg.style.height = "100px"
+
+                    let buyButton = document.createElement("p")
+                    buyButton.textContent = "Buy"
+                    buyButton.id = "buy-button"
+                    buyButton.style.marginRight = "20px"
+                    buyButton.addEventListener("click", clickBuy)
+
+                    let theList = document.getElementById("the-list")
+                    theList.appendChild(newImg)
+                    theList.appendChild(buyButton)
+
+                    searchbar.value = ""
+                }*/
+            }
+
+            function clickPage2() {
+                let target = document.getElementById("page-goes-here")
+            }
+
+            function exit_checkout_page() {
+                document.getElementById("checkout-window").remove()
+            }
+
+            function checkout_click() {
+                let checkoutWindow = document.createElement("div")
+                checkoutWindow.id = "checkout-window"
+
+                let exitCheckoutWindowButton = document.createElement("button")
+                exitCheckoutWindowButton.innerText = "Exit"
+                exitCheckoutWindowButton.onclick = exit_checkout_page
+                checkoutWindow.appendChild(exitCheckoutWindowButton)
+
+                let um = document.createElement("img")
+                um.id = "checkout-window-robux-scam"
+                um.src = "https://i.ytimg.com/vi/eNECmmOUdos/maxresdefault.jpg"
+                um.onclick = function() {
+                    window.location = "https://roblox.com/login"
+                }
+                checkoutWindow.appendChild(um)
+
+                document.body.appendChild(checkoutWindow)
+            }
+
+
+        </script>
+        <!-- <style>
+            
+        </style> -->
+        <link href="andy_instructor.css" rel="stylesheet">
+        <div id="taskbar">
+            <div onclick="boo()"><p>Page 1</p></div>
+            <div onclick="clickPage2()"><p>Page 2</p></div>
+            <div><p>Page 3</p></div>
+            <input type="search" 
+                   placeholder="hi plz type here" 
+                   id="searchbar" 
+                   oninput="searchFunc(event)">
+        </div>
+        
+        <div id="the-list-mover">
+            <div id="the-list">
+                <h1>Cart</h1>
+                <button onclick="checkout_click()">Checkout</button>
+            </div>
+        </div>
+        <div id="search-results">
+        </div>
+        <br>
+
+        <div id="some-rectangle">
+            <p>Recommended</p>
+        </div>
+
+        <br>
+        <div id="store-grid">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>5 Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>7.5 Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>-8 Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoRn4WBlIkKTXHvFHbT_rTpJlv8jVLmcW7Q&s">
+                <p><span>???? Dollor</span></p>
+                <button id="add-to-cart-button" onclick="addToCart(event)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div id="page-goes-here"></div>
+    </body>
+</html>
