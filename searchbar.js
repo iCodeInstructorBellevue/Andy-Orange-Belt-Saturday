@@ -1,6 +1,7 @@
 let itemsList = [
     {name: "air", price: "10000000000"},
-    {name: "table", price: "29"}
+    {name: "table", price: "29"},
+    {name: "beans", price: "89"},
 ]
 
 function onType() {
@@ -12,6 +13,10 @@ function onType() {
         subList = []
     }
 
+    // NEW
+    let resultsDiv = document.getElementById("results")
+    resultsDiv.replaceChildren()
+
     for (let item of subList) {
         let searchResult = document.createElement("div")
         let resultText = document.createElement("p")
@@ -20,6 +25,7 @@ function onType() {
 
         searchResult.append(resultText)
 
-        
+        // NEW
+        resultsDiv.append(searchResult)
     }
 }
