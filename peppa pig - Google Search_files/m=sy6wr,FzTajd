@@ -1,0 +1,8 @@
+loaded_h_0(function(_){var window=this;
+_.sEr=_.y("FzTajd",[_.sr]);
+_.v("FzTajd");
+var Dqu=function(a){if(a.size()<2)a.remove();else{let b;(b=a.first())==null||b.remove();let c;(c=a.last())==null||c.remove()}},Equ=class extends _.ms{static Sa(){return{service:{uf:_.Yv}}}constructor(a){super(a.Oa);this.uf=a.service.uf;this.Ba();(0,_.Cf)(()=>{this.Aa()})}Ba(){const a=document.getElementById(this.getRoot().Tc("aria-owns")||"");a&&(this.oa=new _.no(a))}Aa(){this.oa!==void 0&&!this.oa.isEmpty()&&this.oa&&!this.oa.closest(".TQc1id").isEmpty()&&_.rSb(this.uf,this.oa,this.getRoot())}Ca(){if(this.oa!==
+void 0&&!this.oa.isEmpty()&&(!this.oa||this.oa.closest(".TQc1id").isEmpty())){var a;(a=this.getRoot().next(".focusSentinel").first())==null||a.remove();var b;(b=this.getRoot().next(".focusSentinel").first())==null||b.remove();Dqu(this.oa.children().filter(".focusSentinel"));Dqu(this.oa.children().filter(".focusSentinel"))}}};Equ.prototype.$wa$jEKfHe=function(){return this.Ca};Equ.prototype.$wa$NYVLBc=function(){return this.Aa};Equ.prototype.$wa$F0OlHe=function(){return this.Ba};_.os(_.sEr,Equ);
+_.w();
+});
+// Google Inc.
