@@ -1,21 +1,26 @@
 let number = 0
 
+function clicked() {
+    number = number + 1
+    document.getElementById("a-number").innerText
+       = number
+}
+
+
+
+
+
 // NEW
 let something = false
 
-function clicked() {
-    number = number + 1
-    document.getElementById("a-number").innerText = number
-}
-
 function clicked2() {
+    let clickElem = document.getElementById("click-me-2")
+
     if (something) {
-        document.getElementById("click-me-2").style.color = "black"
+        clickElem.className = "not-clicked"
         something = false
     } else {
-        document.getElementById("click-me-2").style.color = "red"
+        clickElem.className = "clicked"
         something = true        
     }
-    
-    
 }
