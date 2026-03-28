@@ -23,4 +23,5 @@ function onType() {
         //NEW
         resultsDiv.append(searchResult)
    }    
+   
 }

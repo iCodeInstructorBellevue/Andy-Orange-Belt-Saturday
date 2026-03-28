@@ -1,0 +1,10 @@
+.clicked {
+    color:rgb(255, 0, 0);
+    font-size: 100px;
+    transition: 1s;
+}
+
+.not-clicked{
+    color: rgb(000, 0, 0);
+    transition: 1s;
+}
