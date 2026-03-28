@@ -1,0 +1,9 @@
+.clicked {
+ color: red;
+ font-size : 100px;
+ transition: 1000s;
+}
+.notClicked {
+ color: black;
+ transition: 60s;
+}

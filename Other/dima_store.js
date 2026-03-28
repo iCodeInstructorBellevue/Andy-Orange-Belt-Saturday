@@ -4,6 +4,9 @@ let itemsList = [
     {name: "USB-C Killer", price: "1.00", img: "http://127.0.0.1:5500/Images/USB-C_Killer.jpg"},
     {name: "Lightning Killer", price: "1.00", img: "http://127.0.0.1:5500/Images/Lightning_Killer.jpg"},
     {name: "Mini USB Killer", price: "1.00", img: "http://127.0.0.1:5500/Images/Mini_USB%20%20Killer.jpg"},
+    {name: "Hunter Cat", price: "10.00", img: "http://127.0.0.1:5500/Images/Hunter-Cat-v1.1-510x320.jpg"},
+    {name: "iCopy-XS", price: "6.00", img: "http://127.0.0.1:5500/Images/icopy-xs-nikola.t.labs-rfid.cloner-454A0297a-510x339.jpg"},
+    {name: "LAN Tap Pro", price: "5.00", img: "http://127.0.0.1:5500/Images/lantappro-019a-1024-510x383.jpg"},
 ]
 
 window.onload = function() {
