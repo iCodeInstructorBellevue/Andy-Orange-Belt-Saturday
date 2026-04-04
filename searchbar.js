@@ -10,54 +10,12 @@ function onType() {
         e => e.name.includes(searchbar.value)
     )
 
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     if (searchbar.value.length === 0) {
         subList = []
     }
 
-
-
-
-
-
     let resultsDiv = document.getElementById("results")
     resultsDiv.replaceChildren()
-
-
-
-
-
 
     for (let item of subList) {
         let searchResult = document.createElement("div")
@@ -83,11 +41,6 @@ function onResultClick(priceIn, imgLinkIn, eventIn) {
 
     cartDiv.append(cartImg)
     cartDiv.append(cartText)
-
-
-
-
-
 
 
     cartText.addEventListener("click", (eventIn_) => {
