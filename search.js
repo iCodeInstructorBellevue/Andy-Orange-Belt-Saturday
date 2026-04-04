@@ -10,6 +10,7 @@ function onType() {
    if (search.value.length === 0) {
         subList = []
    }
+   
      //NEW
    let resultsDiv = document.getElementById("results")
    resultsDiv.replaceChildren()
