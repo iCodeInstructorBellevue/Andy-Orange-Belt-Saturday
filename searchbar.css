@@ -1,0 +1,19 @@
+#cart-section {
+    border: 1px solid red;
+}
+#cart-section img {
+    max-width: 100px;
+}
+
+.popup {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    opacity: 0.7;
+}
+.popup p {
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
