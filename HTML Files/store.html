@@ -3,16 +3,21 @@
         <title>illegal store</title>
     </head>
     <body>
-         <script src="../Other/dima_store.js"></script>
+         <script type="module" src="../Other/dima_store.js"></script>
          <link href="../Other/dima.css" rel="stylesheet">
          <link href="../Other/dima_store.css" rel="stylesheet">
+         <script type="module" src="../Other/store_searchbar.js"></script>
+         <script src="../Other/countdown.js"></script>
        <div id="taskbar">
         <div onclick="document.location='Dima_do_not_hack_me.html'"><p>Page 1</p></div>
         <div onclick="document.location='button.html'"><p>Page 2</p></div>
         <input type="text"
             placeholder="Search the Illegal Store"
             id="searchbar"
+            oninput="onType()"
         >
+        
+        <div id="time"></div>
        </div>
        <div id="side-mover">
         <div id="Cart">
@@ -20,9 +25,11 @@
          <button>Checkout</button>
         </div>
        </div>
+       <div id="results"></div>
        <div id="Recommended">
         <p>Recommended</p>
        </div>
+       
        <div id="Store_Grid">
         <!-- <div>
         <img src="../Images/Flipper_Zero.jpg">
