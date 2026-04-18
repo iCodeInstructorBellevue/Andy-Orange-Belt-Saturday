@@ -3,7 +3,7 @@
   padding: 0;
   }
 
-#time{
+#countdown{
   line-height: 85px;
   color: #fff;
   font-size: 50px;
@@ -11,7 +11,7 @@
   font-family: "Consolas";
   letter-spacing: 1px;
 
-  background: linear-gradient(100deg, rgb(98, 0, 255), yellow, magenta);
+  background: linear-gradient(100deg, cyan, yellow, magenta);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: rainbow 1.5s linear infinite;
