@@ -7,7 +7,7 @@
          <link href="../Other/dima.css" rel="stylesheet">
          <link href="../Other/dima_store.css" rel="stylesheet">
          <script type="module" src="../Other/store_searchbar.js"></script>
-         <script src="../Other/countdown.js"></script>
+         <script defer src="../Other/countdown.js"></script>
        <div id="taskbar">
         <div onclick="document.location='Dima_do_not_hack_me.html'"><p>Page 1</p></div>
         <div onclick="document.location='button.html'"><p>Page 2</p></div>
@@ -18,11 +18,21 @@
         >
         
         <div id="time"></div>
+        <div>
+        <div id="demo"></div>
+        <div id="day"></div>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        </div>
        </div>
        <div id="side-mover">
         <div id="Cart">
          <h1>Cart</h1>
          <button>Checkout</button>
+
+         <div id="cart-items" style="overflow-y: scroll; max-height: 900px">
+         </div>
         </div>
        </div>
        <div id="results"></div>
