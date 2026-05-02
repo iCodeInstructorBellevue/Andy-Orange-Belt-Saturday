@@ -1,0 +1,28 @@
+body {
+    margin:0;
+    padding:0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, 
+    lime 0%,
+     skyblue 100%);
+    font-family: Consolas,sans-serif;
+}
+ 
+#gameContainer   {
+    position: relative;
+
+    width:400px;
+    height:600px;
+
+    background: linear-gradient(to bottom
+    lightblue 0%,
+    lightgreen 50%,
+    navy 100% );
+
+}
