@@ -1,0 +1,36 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 999;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px; right: 5px;
+  cursor: pointer;
+}
+
+body{
+    background-image: url('https://ih1.redbubble.net/image.4595349185.1294/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg');
+
+}
+
+html { cursor: none; }
+
+.no-change { cursor: default !important; }
+
