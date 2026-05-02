@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    
+    background: linear-gradient(135deg, 
+    #667eea 0%, 
+    #764ba2 100%);
+    font-family: Arial, sans-serif;
+}
+
+#gameContainer {
+    position: relative;
+    
+    width: 400px;
+    height: 600px;
+    
+    background: linear-gradient(to bottom,
+     #87CEEB 0%, 
+     white 50%, 
+     black 100%);
+    
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0, 0.3);
+    
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    background: green;
+    border-radius: 50% 50% 40% 40%;
+    border: 2px solid darkgreen;
+}
