@@ -20,9 +20,72 @@ body {
     width:400px;
     height:600px;
 
-    background: linear-gradient(to bottom
+    background: linear-gradient(to bottom,
     lightblue 0%,
     lightgreen 50%,
     navy 100% );
 
+    border:3px solid black; 
+    border-radius: 10px;
+    box-shadow: 0 10px 30px black ;
+
+    overflow: hidden;
+
+
+}
+#player{
+    position: absolute;
+    width:50px;
+    height:50px;
+    background: lightblue;
+    border-radius: 50% 50% 40% 40%;
+    border: 2px solid limegreen;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+.eye{
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+.platform{
+    position: absolute;
+    width: 70px;
+    height: 15px;
+    background: linear-gradient(to bottom, lime, lightgreen);
+    border-radius: 5px;
+    border: 1px solid skyblue;
+}
+
+
+.breaking-platform.breaking{
+    background-color: limegreen;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.8);
+    
+}
+
+.background-layer{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.1) 20px,
+        transparent 20px,
+        transparent 40px
+
+    );
+    pointer-events: none;
 }
