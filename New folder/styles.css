@@ -1,0 +1,31 @@
+/* SECTION 1: Basic page setup */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    min-width: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: arial, sans-serif;
+}
+/* SECTION 2: Game container */
+#gameContainer {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 50%, #FFF 100%);
+    border: 3px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+/* SECTINO 3: player (Doodler) */
+#player{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #4CAF50;
+    border-radius: 50% 50% 40% 40%;
+    border: 2px solid #2E7D32;
+}
