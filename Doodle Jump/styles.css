@@ -62,9 +62,10 @@ body {
     position: absolute;
     width: 70px;
     height: 15px;
-    background: linear-gradient(to bottom, #8B4513, A0522D);
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
     border-radius: 5px;
     border: 1px solid #654321;
+
 }
 
 .breaking-platform.breaking {
@@ -88,4 +89,8 @@ body {
         transparent 40px
     );
     pointer-events: none;
+}
+
+.bouncy-platform {
+    background: linear-gradient(to bottom, #f700ff, #5f22cf);
 }
