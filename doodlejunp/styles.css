@@ -59,7 +59,7 @@ body {
     position: absolute;
     width: 70px;
     height: 15px;
-    background: linear-gradient(to bottom, lime, lightgreen);
+    background: linear-gradient(to bottom, black, lime);
     border-radius: 5px;
     border: 1px solid skyblue;
 }
@@ -88,4 +88,7 @@ body {
 
     );
     pointer-events: none;
+}
+.bouncy-platform{
+background: linear-gradient(to bottom, black, blue);
 }
