@@ -92,3 +92,7 @@ body {
 .bouncy-platform{
 background: linear-gradient(to bottom, black, blue);
 }
+.speed-platform {
+    background-color: orange;
+    border: 2px solid darkorange;
+}
