@@ -46,8 +46,6 @@ body {
     justify-content: center;
 }
 
-/* Add eyes to make it more character-like */
-
 .eye {
     width: 8px;
     height: 8px;
@@ -93,4 +91,9 @@ body {
 
 .bouncy-platform {
     background: linear-gradient(to bottom, #f700ff, #5f22cf);
+}
+
+.speed-platform {
+    background-color: orange;
+    border: 2px solid darkorange;
 }
