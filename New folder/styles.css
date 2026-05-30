@@ -57,3 +57,19 @@ body {
     opacity: 0.5;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    pointer-events: none;
+}
