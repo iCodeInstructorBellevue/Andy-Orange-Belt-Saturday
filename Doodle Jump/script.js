@@ -58,6 +58,8 @@ function createPlatform(x, y) {
     platformElement.style.top = platform.y + 'px';
     platformElement.style.width = platform.width + 'px';
     gameContainer.appendChild(platformElement);
+
+    platform.element = platformElement;
     return platform;
 }
 
@@ -115,7 +117,7 @@ function updatePlayer() {
     }
 
     checkCollisions();
-
+    updateCamera();
     playerElement.style.left = player.x + 'px';
     playerElement.style.top = player.y + 'px';
 }
@@ -168,3 +170,33 @@ initializePlatforms();
 gameRunning = true;
 
 setInterval(updatePlayer, 33);
+
+// Section 5: Camera and Scrolling
+
+function updateCamera() {
+    if (player.y < 200) {
+        console.log("hi")
+        const scrollAmount = 200 - player.y;
+        player.y = 200;
+        camera += scrollAmount;
+
+        console.log("????")
+        for (let i = platforms.length - 1; i >= 0; i--) {
+            platforms[i].y += scrollAmount;
+            platforms[i].element.style.top = platforms[i].y + 'px';
+            if (platforms[i].y > gameHeight) {
+                console.log("good boy")
+                platforms[i].element.remove();
+                platforms.splice(i,1);
+
+                const newX = Math.random() * (gameWidth - 70);
+                const newY = -10;
+                platforms.push(createPlatform(newX, newY));
+
+            }
+        }
+    }
+}
+
+//Section 6: Game Over
+
