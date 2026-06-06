@@ -120,6 +120,7 @@ function updatePlayer() {
     }
 
     checkCollisions()
+    updateCamera()
 
 playerElement.style.left = player.x + 'px';
 playerElement.style.top = player.y + 'px';
@@ -183,9 +184,20 @@ function updateCamera(){
 const scrollAmount = 200 - player.y
 player.y = 200
 camera+= scrollAmount
-for (let i = platform.length - 1; i >= 0; i--){
+for (let i = platforms.length - 1; i >= 0; i--){
     platforms[i].y+=scrollAmount
-    platforms[i].element.style.top = platform[i].y + 'px';
+    platforms[i].element.style.top = platforms[i].y + 'px';
+
+    if (platforms[i].y > gameHeight) {
+       platforms[i].element.remove();
+       platforms.splice(i, i);
+       
+       
+       
+       const newX = Math.random() * (gameWidth - 70);
+       const newY = -10;
+       platforms.push(createPlatform(newX, newY));
+    }
 }
    }
 
