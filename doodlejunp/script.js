@@ -121,6 +121,7 @@ function updatePlayer() {
 
     checkCollisions()
     updateCamera()
+    checkGameOver()
 
 playerElement.style.left = player.x + 'px';
 playerElement.style.top = player.y + 'px';
@@ -190,7 +191,7 @@ for (let i = platforms.length - 1; i >= 0; i--){
 
     if (platforms[i].y > gameHeight) {
        platforms[i].element.remove();
-       platforms.splice(i, i);
+       platforms.splice(i, 1);
        
        
        
@@ -210,3 +211,16 @@ for (let i = platforms.length - 1; i >= 0; i--){
 initalizePlatform();
 gameRunning = true;
 setInterval(updatePlayer, 33)
+
+function checkGameOver() {
+
+    if (player.y > gameHeight) {
+        gameOver();
+    }
+}
+
+function gameOver() {
+     gameRunning = false;
+     finalScoreElement.innerHTML = score;
+     gameOverElement.style.display = 'block';
+}
