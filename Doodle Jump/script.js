@@ -21,7 +21,7 @@ let moveRight = false;
 
 const playerElement = document.getElementById('player');
 const scoreElement = document.getElementById('score');
-const gameOver = document.getElementById('gameOver');
+const gameOverElement = document.getElementById('gameOver');
 const finalScoreElement = document.getElementById('finalScore');
 const startScreenElement = document.getElementById('startScreen');
 const gameContainer = document.getElementById('gameContainer');
@@ -115,7 +115,7 @@ function updatePlayer() {
     } else if (player.x > gameWidth) {
         player.x = -player.width;
     }
-
+    checkGameOver();
     checkCollisions();
     updateCamera();
     playerElement.style.left = player.x + 'px';
@@ -200,3 +200,14 @@ function updateCamera() {
 
 //Section 6: Game Over
 
+function checkGameOver() {
+    if (player.y > gameHeight) {
+        gameOver();
+    }
+}
+
+function gameOver() {
+    gameRunning = false;
+    finalScoreElement.textContent = score;
+    gameOverElement.style.display = 'block';
+}
