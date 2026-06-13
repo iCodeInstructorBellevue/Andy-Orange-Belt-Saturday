@@ -39,7 +39,8 @@ function createPlatform(x, y) {
         isBreakable: isBreakable,
         isBroken: false,
         isBouncy: isBouncy,
-        isSpeed: isSpeed
+        isSpeed: isSpeed,
+        hasBounced: false
     };
 
     const platformElement = document.createElement('div');
@@ -135,10 +136,13 @@ function checkCollisions() {
                 
                 player.velocityY = player.jumpPower;
 
-                if(platform.isBreakable && !platform.isBroken){
-                    score += 10;
-                }else{
-                    score += 1;
+                if(!platform.hasBounced) {
+                    platform.hasBounced = true;
+                    if(platform.isBreakable && !platform.isBroken){
+                        score += 10;
+                    }else{
+                        score += 1;
+                    }
                 }
                 scoreElement.textContent = 'score: ' + score;
 
@@ -146,7 +150,7 @@ function checkCollisions() {
                     platform.isBroken = true;
                     platform.element.classList.add('breaking');
 
-                    platform.splice(i, 1);
+                    platforms.splice(i, 1);
 
                     setTimeout(() => {
                         platform.element.remove()
@@ -197,7 +201,27 @@ function updateCamera() {
         }
     }
 }
+gameOverElement.addEventListener("click", function(event) {
+    for (let platform of platforms) {
+        platform.element.remove();
+    }
+    platforms = [];
 
+    score = 0;
+    camera = 0;
+    player.x = 175;
+    player.y = 450;
+    finalScoreElement.textContent = null;
+    player.velocityY = 0;
+    playerElement.style.left = 175;
+    playerElement.style.top = 450;
+    playerElement.style.left = player.x + 'px';
+    playerElement.style.top = player.y + 'px';
+
+    initializePlatforms();
+
+    gameRunning = true;
+});
 //Section 6: Game Over
 
 function checkGameOver() {
