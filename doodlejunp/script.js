@@ -26,6 +26,25 @@ const finalScoreElement = document.getElementById('finalScore')
 const startScreenElements = document.getElementById('startScreen')
 const gameContainer = document.getElementById('gameContainer')
 
+gameOverElement.addEventListener("click", function(event) {
+    for (let platform of platforms) {
+        platform.element.remove();
+    }
+    platforms = [];
+
+    score = 0;
+    camera = 0;
+    player.x = 175;
+    player.y = 450;
+    player.velocityY = 0; // Andy: added this to make sure that the player stops falling when restarting
+    finalScoreElement.textContent = null;
+    playerElement.style.left = player.x + 'px';
+    playerElement.style.top = player.y + 'px';
+    initalizePlatform();
+
+    gameRunning = true;
+})
+
 function createPlatform(x, y) {
  const isBreakble = Math.random() < 0.2; 
   const isBouncy = Math.random() < 0.15; 
@@ -33,13 +52,14 @@ function createPlatform(x, y) {
  const platform = {
     x: x,
     y: y,
-    width: 70*Math.random(),
+    width: 40*Math.random() + 30,
     height: 15,
     element: null,
     isBreakble: isBreakble,
      isBouncy: isBouncy, 
      isSpeed: isSpeed ,
-    isBroken: false
+    isBroken: false,
+    hasBounced:false,
  };
     const platformElement = document.createElement('div');
     platformElement.className = 'platform';
@@ -144,14 +164,16 @@ function checkCollisions(){
 
         ) {
             player.velocityY = player.jumpPower;
-
-            if(platform.isBreakable && !platform.isBroken) {
+            if (!platform.hasBounced) {
+                 platform.hasBounced = true;
+             if(platform.isBreakable && !platform.isBroken) {
                 score += 10;
-
-            } else {
+                 } else {
                 score += 1;
             }
           
+            }
+           
             scoreElement.textContent = 'score:' + score;
 
             if (platform.isBreakable && !platform.isBroken) {
