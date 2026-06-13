@@ -76,6 +76,11 @@ body {
     pointer-events: none;
 }
 
+.speed-platform {
+    background-color: orange;
+    border: 2px solid darkorange;
+}
+
 @keyframes crackPlatform {
     0% { transform: scale(1); opacity: 1; }
     50% { transform: scale(0.95) rotate(2deg); opacity: 0.7;  }

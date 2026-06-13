@@ -25,6 +25,99 @@ const finalScoerElement = document.getElementById('finalScore');
 const startScreenElement = document.getElementById('startScreen');
 const gameContainer = document.getElementById('gameContainer');
 
+document.addEventListener('keydown', function (e) {
+    const key = e.key
+    if (!gameRunning) return;
+
+    if (e.key === 'ArrowLeft' || e.key === 'a') {
+        moveLeft = true;
+    } else if (e.key === 'ArrowRight' || e.key === 'd') {
+        moveRight = true;
+    }
+});
+
+if (Math.random() < 0.10) {
+    platformElement.classList.add('speed-platform');
+    platforms.isSpeedBoost = true;
+}
+
+document.addEventListener('keyup', function (e){
+    const key = e.key
+    if (!gameRunning) return;
+
+    if (e.key === 'ArrowLeft' || e.key === 'a') {
+        moveLeft = false;
+    } else if (e.key === 'ArrowRight' || e.key === 'd') {
+        moveRight = false;
+    }
+});
+
+function updatePlayer() {
+    player.velocityY += 0.6;
+    player.y += player.velocityY;
+
+    if (moveLeft) {
+        player.x -= 5;
+    }
+    if (moveRight) {
+        player.x += 5;
+    }
+
+    if (player.x < -player.width) {
+        player.x = gameWidth;
+    } else if (player.x > gameWidth) {
+        player.x = -player.width;
+    } 
+
+    playerElement.style.left = player.x + 'px';
+    playerElement.style.top = player.y + 'px';
+}
+
+Function CheckCollisions() {
+    if (player.velocityY <= 0) return;
+
+    for (let i = platforms.length - 1; i >=0; i--) {
+        
+        if (player.x < platforms.x + platforms.width &&
+            player.x + player.width > platforms.x &&
+            player.y + player.height > platforms.y &&
+            player.y + player.height < platforms.y + platforms.height + 10) {
+                
+                player.velocityY = player.jumpPower;
+
+                score += 1;
+                scoreElement.textContent = 'score:  ' + score;
+
+            if  (platforms.isBreakable && !platforms.isbroken) {
+                platforms.isbroken = true;
+                platforms.element.classList.add('breaking');
+              } 
+                platforms.slice(i, 1);
+
+              if (platforms.isSpeedBoost){
+                player.velocityX = 8;
+                setTimeout(() => {
+                    player.velocityX = 5;
+                }, 3000);
+              }
+
+              if(platforms.isbouncy){
+                player.velocityY = player.jumpPower * 1.8;
+              }else{
+                player.velocityY = player.jumpPower;
+              }
+              
+              if(platforms.isBreakable && !platforms.isbroken){
+                    score += 10;
+              }else{
+                    score += 1;
+              }
+              scoreElement.textContent = 'score: ' + score;
+            }
+        }
+    }
+}
+
 function creatPlatform(x, y) {
     const isBreakable = Math.random() < 0.2;
     const plantform = {
