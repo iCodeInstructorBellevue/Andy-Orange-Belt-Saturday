@@ -47,7 +47,7 @@ body {
     position: absolute;
     width: 70px;
     height: 15px;
-    background: linear-gradient(to bottom, #8b4513, #A0522D);
+    background: linear-gradient(to bottom, #ff0000, #580000);
     border-radius: 5px;
     border: 1px solid #654321;
 }
@@ -60,7 +60,7 @@ body {
     animation: crackPlatform 0.3s forwards;
 }
 
-.background-layer {
+.background-layer { 
     position: absolute;
     top: 0;
     left: 0;
@@ -77,8 +77,13 @@ body {
 }
 
 .speed-platform {
-    background-color: orange;
-    border: 2px solid darkorange;
+    background-color: rgb(255, 0, 0);
+    border: 2px solid rgb(80, 0, 0);
+}
+
+.bouncy-platform {
+    background-color: rgb(68, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
 }
 
 @keyframes crackPlatform {
