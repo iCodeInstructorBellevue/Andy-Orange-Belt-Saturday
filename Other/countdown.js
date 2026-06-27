@@ -29,7 +29,6 @@ var x = setInterval(function(){
     document.getElementById('day').innerHTML = days;
     document.getElementById('hour').innerHTML = hours;
     document.getElementById('minute').innerHTML = minutes;
-    document.getElementById('second').innerHTML = seconds;
 
     if (t > 0) {
         clearInterval(x);
@@ -37,6 +36,5 @@ var x = setInterval(function(){
             document.getElementById('day').innerHTML = 0;
             document.getElementById('hour').innerHTML = 0;
             document.getElementById('minute').innerHTML = 0;
-            document.getElementById('msecond').innerHTML = 0;
     }
 })

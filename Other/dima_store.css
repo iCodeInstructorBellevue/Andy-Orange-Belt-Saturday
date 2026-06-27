@@ -39,3 +39,8 @@
 #Store_Grid > div > button {
     font-weight: bold;
 }
+#logo {
+    text-align: end;
+    width: 100px;
+    /* width: calc(100% - 200px); */
+}
