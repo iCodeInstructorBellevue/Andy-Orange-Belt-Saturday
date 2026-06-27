@@ -23,6 +23,8 @@ const playerElement = document.getElementById('player');
 const scoreElement = document.getElementById('score');
 const gameOverElement = document.getElementById('gameOver');
 const finalScoerElement = document.getElementById('finalScore');
+const finaltextelement = document.getElementById('finalScoreText')
+const respawnelement = document.getElementById('respawn')
 const startScreenElement = document.getElementById('startScreen');
 const gameContainer = document.getElementById('gameContainer');
 
@@ -66,7 +68,7 @@ function updatePlayer() {
     } 
     CheckCollisions();
     updateCamera();
-    //checkGameOver();
+    checkGameOver();
     playerElement.style.left = player.x + 'px';
     playerElement.style.top = player.y + 'px';
 }
@@ -189,7 +191,7 @@ function updateCamera() {
 
 function checkGameOver() {
 
-    if (player.y > gameWidth) {
+    if (player.y > gameHeight) {
         gameOver();
     }
 }
@@ -197,10 +199,35 @@ function checkGameOver() {
 
 function gameOver() {
     gameRunning = false;
-    finalScoerElement.textContent = score;
+    // finalScoerElement.textContent = score;
+    finaltextelement.textContent = score;
     gameOverElement.style.display = 'block';
+    finalScoerElement.style.top = '0';
 }
+respawnelement.addEventListener("click", function(event){
+    finalScoerElement.style.top = "-100vh";
+    for (let platform of platforms) {
+        platform.element.remove();
+    }
+    platforms = [];
 
+    score = 0;
+    camera = 0;
+    player.x = 175;
+    player.y = 450;
+    finaltextelement.textContent = "";
+    player.velocityY = 0;
+    playerElement.style.left = 175;
+    playerElement.style.top = 450;
+    playerElement.style.left = player.x + 'px';
+    playerElement.style.top = player.y + 'px';
+    moveLeft = false;
+    moveRight = false;
+
+    initializeplatforms();
+
+    gameRunning = true;
+});
 playerElement.style.top = player.y + "px";
 playerElement.style.left = player.x + "px";
 
