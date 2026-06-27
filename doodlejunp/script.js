@@ -36,7 +36,7 @@ gameOverElement.addEventListener("click", function(event) {
     camera = 0;
     player.x = 175;
     player.y = 450;
-    player.velocityY = 0; // Andy: added this to make sure that the player stops falling when restarting
+    player.velocityY = 0;
     finalScoreElement.textContent = null;
     playerElement.style.left = player.x + 'px';
     playerElement.style.top = player.y + 'px';
