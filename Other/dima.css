@@ -8,7 +8,7 @@
         }
         #taskbar {
             background-color: gray;
-            width: 100%;
+            width: 89vw;
             height: 50px;
             display: flex;
             align-items:center;
@@ -22,10 +22,6 @@
 
             border: 2px solid transparent;
             box-sizing: border-box;
-        }
-        #taskbar > div:hover {
-            background-color: green;
-            border-color: white
         }
         #taskbar > div:hover > p {
             color: white;

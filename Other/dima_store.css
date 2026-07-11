@@ -4,7 +4,7 @@
     justify-content: end;
 }
 #side-mover > * {
-    padding: 20px;
+    padding: 1vw;
     border-left: 1px solid black;
     border-right: 1px solid black;
     height: 1000px;
@@ -20,7 +20,7 @@
     position: absolute;
     top: 0;
     background-color: white;
-    
+    width: 8vw;
 }
 #Recommended {
     display: flex;
@@ -41,6 +41,10 @@
 }
 #logo {
     text-align: end;
-    width: 100px;
+    width: 100%;
+    height: 100%;
     /* width: calc(100% - 200px); */
+}
+#logo > img {
+    height: 100%;
 }
