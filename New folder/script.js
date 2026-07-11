@@ -25,6 +25,9 @@ const gameOverElement = document.getElementById('gameOver');
 const finalScoerElement = document.getElementById('finalScore');
 const finaltextelement = document.getElementById('finalScoreText')
 const respawnelement = document.getElementById('respawn')
+const gamebuttonelement = document.getElementById('gamebutton')
+const BACKTOTHEMAINMENUelement = document.getElementById('BACK-TO-THE-MAIN-MENU')
+const mainmenuelement = document.getElementById('main-menu')
 const startScreenElement = document.getElementById('startScreen');
 const gameContainer = document.getElementById('gameContainer');
 
@@ -227,6 +230,37 @@ respawnelement.addEventListener("click", function(event){
     initializeplatforms();
 
     gameRunning = true;
+});
+BACKTOTHEMAINMENUelement.addEventListener("click", function(event) {
+     finalScoerElement.style.top = "-100vh";
+    for (let platform of platforms) {
+        platform.element.remove();
+    }
+    platforms = [];
+
+    score = 0;
+    camera = 0;
+    player.x = 175;
+    player.y = 450;
+    finaltextelement.textContent = "";
+    player.velocityY = 0;
+    playerElement.style.left = 175;
+    playerElement.style.top = 450;
+    playerElement.style.left = player.x + 'px';
+    playerElement.style.top = player.y + 'px';
+    moveLeft = false;
+    moveRight = false;
+
+    initializeplatforms();
+
+    gameRunning = true;
+
+    gameContainer.style.top = "-100vh";
+    mainmenuelement.style.top = "40vh"
+});
+gamebuttonelement.addEventListener("click", function(event) {
+    gameContainer.style.top = "0vh";
+    mainmenuelement.style.top = "-100vh"
 });
 playerElement.style.top = player.y + "px";
 playerElement.style.left = player.x + "px";
