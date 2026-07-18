@@ -3,11 +3,52 @@
     height: 250px;
     border: 1px solid black;
 }
-#soccerball-kicky202{
+#soccerball{
     width: 250px;
     height: 250px;
 }
-#baseBall-throwy202{
+#baseball{
     width: 250px;
     height: 250px;
+}
+#basketball{
+    width: 250px;
+    height: 250px;
+
+}
+#soccerball{
+    width: 250px;
+    height: 250px;
+}
+#tennisball{
+    width: 250px;
+    height: 250px;
+}
+#basketball{
+    width: 250px;
+    height: 250px;
+}
+#football{
+    width: 500px;
+    height:250px;
+}
+#tennisball{
+    width:250px;
+    height:250px;
+}
+#poolball{
+    width:250px;
+    height:250px;
+}
+#poolball{
+    width:250px;
+    height:250px;
+}
+#football{
+    width:250px;
+    height:250px;
+}
+#baseball{
+    width:250px;
+    height:250px;
 }
