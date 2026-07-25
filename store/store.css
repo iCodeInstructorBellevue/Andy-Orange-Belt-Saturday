@@ -3,11 +3,11 @@
     height: 250px;
     border: 1px solid black;
 }
-#soccerball{
+.soccerball{
     width: 250px;
     height: 250px;
 }
-#baseball{
+.baseball{
     width: 250px;
     height: 250px;
 }
@@ -16,39 +16,39 @@
     height: 250px;
 
 }
-#soccerball{
+.soccerball{
     width: 250px;
     height: 250px;
 }
-#tennisball{
+.tennisball{
     width: 250px;
     height: 250px;
 }
-#basketball{
+.basketball{
     width: 250px;
     height: 250px;
 }
-#football{
+.football{
     width: 500px;
     height:250px;
 }
-#tennisball{
+.tennisball{
     width:250px;
     height:250px;
 }
-#poolball{
+.poolball{
     width:250px;
     height:250px;
 }
-#poolball{
+.poolball{
     width:250px;
     height:250px;
 }
-#football{
+.football{
     width:250px;
     height:250px;
 }
-#baseball{
+.baseball{
     width:250px;
     height:250px;
 }
