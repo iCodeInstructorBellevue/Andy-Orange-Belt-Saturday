@@ -1,0 +1,50 @@
+<html>
+    <header>
+       <title>Rock-Paper-Scissors</title>
+       <link rel="stylesheet"  href="styles.css">
+       <script src="script.js" defer></script>
+    </header>
+    <body>
+        <div class="game-container">
+            <header>
+                <h1>Rock, Paper, Scissors Shoot!</h1>
+            </header>
+
+            <div class="scoreboard">
+                <h2>Scoreboard</h2>
+                <div class="score">
+                    <p>Player: <span id="player-score">
+                    0
+                    </span></p>
+                   <p>CPU: <span id="computer-score">
+                    0
+                    </span></p>
+                </div>
+            </div>
+
+            <div class="match">
+                <div class="hand" id="player-hand">
+                    <img src="images/hand.jpg">
+                </div>
+                <div class="hand" id="computer-hand">
+                    <img src="images/hand.jpg">
+                </div>
+            </div>
+            
+            <div class="result">
+                <p>Choose one</p>
+            </div>
+
+            <div class="options">
+                <button class="choice-btn"
+                         data-choice="rock">Rock</button>
+
+                <button class="choice-btn"
+                         data-choice="paper">Paper</button>
+                
+                <button class="choice-btn"
+                         data-choice="scissors">Scissors</button>
+            </div>
+        </div>
+    </body>
+</html>
