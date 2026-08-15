@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock_paper_scissors</title>
+    <link rel="stylesheet" href="./style.css">
+    <script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Rock, Paper, scissors!</h1>
+        </header>
+
+       <div class="Scoreboard">
+        <h2>scoredboard</h2>
+         <div class="score">
+            <p>player: <span id="player-score">0</span></p>
+            <p>computer: <span id="computer-score">0</span></p>
+         </div>
+       </div>
+
+       <div class="match">
+        <div class="hand" id="player-hand">
+            <img src="images/images.png" alt="player's hand">
+            </div>
+        <div class="hand" id="computer-hand">
+            <img src="images/images.png" alt="computer's hand">
+        </div>
+       </div>
+
+       <div class="result">
+            <p>choose your weapon!</p>
+       </div>
+
+        <div class="options">
+            <button class="choice-btn" data-choice="rock">rock</button>
+            <button class="choice-btn" data-choice="paper">paper</button>
+            <button class="choice-btn" data-choice="scissors">scissors</button>
+            <button class="choice-btn" data-choice="hand">hand</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
+    
