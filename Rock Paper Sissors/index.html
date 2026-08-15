@@ -6,40 +6,38 @@
         <script src="script.js" defer></script>
         <link rel="icon" type="image/x-icon" href="logo.ico">
     </head>
-    <header>
-        <h1>Rock, Paper, Scissors</h1>
-    </header>
+
     <body>
         <div class="game-container">
-            <h2>Scoreboard</h2>
-            <div class="score">
-                <p>Player: <span id="player-score">0</span></p>
-                <p>Bot: <span id="bot-score">0</span></p>
+            <header>
+                <h1>Rock, Paper, Scissors</h1>
+            </header>
+            <div class="scoreboard">
+                <h2>Scoreboard</h2>
+                <div class="score">
+                    <p>Player: <span id="player-score">0</span></p>
+                    <p>Bot: <span id="bot-score">0</span></p>
+                </div>
+            </div>
+            <div class="match">
+                <div class="hand" id="player-hand">
+                    <img src="hand.png" alt="Player's Hand">
+                </div>
+                <div class="hand" id="bot-hand">
+                    <img src="hand.png" alt="Bot's hand">
+                </div>
+            </div>
+
+            <div class="result">
+                <p>Choose your weapon</p>
+            </div>
+
+            <div class="options">
+                <button class="choice-btn" data-choice="rock">Rock</button>
+                <button class="choice-btn" data-choice="paper">Paper</button>
+                <button class="choice=btn" data-choice="scissors">Scissors</button>
             </div>
         </div>
 
-        <div class="match">
-            <div class="hand" id="player-hand">
-                <img src="hand.png" alt="Player's Hand">
-            </div>
-            <div class="hand" id="bot-hand">
-                <img src="hand.png" alt="Bot's hand">
-            </div>
-        </div>
-
-        <div class="results">
-            <p>Choose your weapon</p>
-        </div>
-
-        <div class="options">
-            <button class="choice-btn" data-choice="rock">Rock</button>
-            <button class="choice-btn" data-choice="paper">Paper</button>
-            <button class="choice=btn" data-choice="scissors">Scissors</button>
-        </div>
-
-
-        <div class="options">
-
-        </div>
     </body>
 </html>
