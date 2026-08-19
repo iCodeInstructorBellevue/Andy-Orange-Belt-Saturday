@@ -15,10 +15,14 @@ body{
 }
 .hand {
     width: 50px;
-    display: inline-block}
+    }
 .hand > img{
     width: 100%;}   
-    
+.match{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}   
     
 header > h1 {
     margin-top:0;
