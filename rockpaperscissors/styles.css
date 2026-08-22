@@ -61,3 +61,16 @@ header > h1 {
 .options button {
     background-color: gold;
 }
+
+.shake {
+    animation: shake-hand 0.4s 4 alternate;
+}
+
+@keyframes shake-hand {
+    from {
+        transform: rotate(15deg);
+    }
+    to   {
+        transform: rotate(-15deg);
+    }
+}
