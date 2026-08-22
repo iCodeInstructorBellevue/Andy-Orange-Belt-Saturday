@@ -81,3 +81,16 @@ h1 {
 .hand > img {
     width: 100%;
 }
+
+.shake {
+    animation: shake-anim 0.4s 4 alternate;
+}
+
+@keyframes shake-anim {
+    from {
+        transform: rotate(15deg);
+    }
+    to {
+        transform: rotate(-15deg);
+    }
+}
