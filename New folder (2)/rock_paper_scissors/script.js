@@ -5,27 +5,25 @@ const computerHandEl = document.getElementById('computer-hand');
 const playerHandimg = playerHandEl.querySelector('img');
 const computerHandimg = computerHandEl.querySelector('img');
 const resultText = document.querySelector('.result p');
-const optionButtons = document.querySelectorAll('.option .choice-btn');
+const optionButtons = document.querySelectorAll('.options .choice-btn');
 const gameContainer = document.querySelector('.game-container');
 
 let playerScore = 0;
 let computerScore = 0;
-const choices = ['rock', 'paper', 'scissors'];
+const choices = ['rock', 'paper', 'scissors', 'hand', 'gun', 'rpg', 'throwing knife'];
 
 optionButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const playerChoice = button.dataset.choices;
+        const playerChoice = button.dataset.choice;
         playRound(playerChoice)
     });
 });
 
 function playRound(playerChoice){
+    console.log("?")
     togglebuttons(true);
 
     resultText.textContent = "Rock, Paper, Scissors...";
-
-    // playerHandimg.src = 'images/ChatGPT Image Jul 22, 2026, 04_54_16 PM.png';
-    // computerHandimg.src = 'images/ChatGPT Image Jul 22, 2026, 04_54_16 PM.png';
 
     playerHandEl.classList.add('shake');
     computerHandEl.classList.add('shake');
@@ -54,9 +52,27 @@ function playRound(playerChoice){
         }
         if(
             (player === 'rock' && computer === 'scissors') ||
-            (player === 'paper' && computer === 'Rock') ||
-            (player === 'scissors' && computer === 'paper')
-        ) {
+            (player === 'rock' && computer === 'hand') ||
+            (player === 'rock' && computer === 'gun') ||
+            (player === 'paper' && computer === 'rock') ||
+            (player === 'scissors' && computer === 'hand') ||
+            (player === 'scissors' && computer === 'paper') ||
+            (player === 'hand' && computer === 'paper') ||
+            (player === 'gun' && computer === 'paper') ||
+            (player === 'gun' && computer === 'hand') ||
+            (player === 'gun' && computer === 'scissors') ||
+            (player === 'gun' && computer === 'throwing knife') ||
+            (player === 'rpg' && computer === 'rock') ||
+            (player === 'rpg' && computer === 'paper') ||
+            (player === 'rpg' && computer === 'scissors') ||
+            (player === 'rpg' && computer === 'hand') ||
+            (player === 'rpg' && computer === 'gun') ||
+            (player === 'rpg' && computer === 'throwing knife') ||
+            (player === 'throwing knife' && computer === 'rock') ||
+            (player === 'throwing knife' && computer === 'paper') ||
+            (player === 'throwing knife' && computer === 'scissors') ||
+            (player === 'throwing knife' && computer === 'hand')
+        ){
             return 'player';
         }
         return 'computer';
