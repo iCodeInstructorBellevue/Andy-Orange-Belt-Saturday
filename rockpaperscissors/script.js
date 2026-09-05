@@ -88,7 +88,7 @@ function updateScoreboard(winner){
 
   setTimeout(() => {
     playerScoreEl.classList.remove('score-updated');
-    cpuScoreEl.classlist.remove('score-updated');
+    cpuScoreEl.classList.remove('score-updated');
   }, 500);
 
   setTimeout(() => {
