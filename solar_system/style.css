@@ -1,0 +1,11 @@
+:root{
+    --sun-size: 100px;
+    --mercury-orbit: 160px; --mercury-size: 10px;
+    --venus-orbit: 220px; --venus-size: 16px;
+    --earth-orbit: 300px; --earth-size: 18px;
+    --mars-orbit: 380px; --mars-size: 14px;
+    --jupiter-orbit: 500px; --jupiter-size: 40px;
+    --saturn-orbit: 650px; --saturn-size: 35px;
+    --uranus-orbit: 780px; --uranus-size: 28px;
+    --neptune-orbit: 900px; --neptune-size: 26px;
+}
