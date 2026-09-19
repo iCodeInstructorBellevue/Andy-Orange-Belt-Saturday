@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function hideInfo(){
+        infoBox.classList.add('hidden');
 
     }
 
