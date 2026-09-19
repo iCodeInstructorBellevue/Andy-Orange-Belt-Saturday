@@ -31,6 +31,39 @@
     color: red;
 }
 ``` 
+...
 
 # THINGS TO DO (part 3)
- - TODO: center text elements and image elements
+ 1. Add this to your HTML page somewhere
+```html
+<div id="thingy"></div>
+```
+ 2. Add this inbetween the `<style>` and `</style>`
+```css
+#thingy {
+    background-color: red;
+    width: 300px;
+    height: 100px;
+}
+```
+...
+
+# THINGS TO DO (part 4)
+ - TODO: make text fit inside of a rectangle/scrlollable inside of it
+
+# THINGS TO DO (part 5)
+ 1. Add this before the thing you want to center: `<div id="in-the-middle">`
+ 2. Add this after the thing you want to center: `</div>`
+ 3. Add this inbetween the `<style>` and `</style>`
+```css
+#in-the-middle {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
+```
+...
+
+# THINGS TO DO (part 6)
+ - TODO: make tables and lists + style them

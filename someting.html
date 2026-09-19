@@ -4,9 +4,53 @@
             width: 10000px;
             height: 10000px;
         }
+        #um {
+            font-size: 100px;
+            color: rgb(127, 201, 23);
+            background-color: blue;
+        }
+        #thing1 {
+            background-color: rgb(6, 7, 8);
+            width: 300px;
+            height: 100px;
+        }
+        #thing2 {
+            background-color: rgb(180, 70, 80);
+            width: 100px;
+            height: 200px;
+        }
+        #thing3 {
+            background-color: rgb(180, 180, 0);
+            width: 700px;
+            height: 250px;
+            transition: 
+                width 0.2s linear,
+                margin-top 0.2s linear;
+        }
+        #thing3:hover {
+            margin-top: 100px;
+            width: 50vw;
+        }
+        #a-line-of-stuff {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
     </style>
 
-    <p>Hi hello</p>
+    <p id="um">Hi hello</p>
+    <div id="thing1"></div>
+    <div id="thing2"></div>
+    <div id="thing3"></div>
+    <div id="thing4"></div>
+
+    <div id="a-line-of-stuff">
+        <div id="thing1"></div>
+        <div id="thing2"></div>
+        <div id="thing3"></div>
+        <div id="thing4"></div>    
+    </div>
     <b>asudihaiuddas</b>
     <i>something underlined</i>
 
