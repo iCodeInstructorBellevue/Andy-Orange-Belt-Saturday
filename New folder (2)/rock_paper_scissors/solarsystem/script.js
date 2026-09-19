@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const infofact = document.getElementById('info-fact');
 
     const planetData = {
-        mercury:{
+        Mercury:{
             name: "mercury",
             fact: "A year on mercury is just 88 earth days long, but a single day lasts for nearly 59 Earth days!"
         },
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "mars",
             fact: "Mars is the fourth planet from the Sun and is commonly known as the Red Planet due to iron-rich minerals oxidizing on its surface."
         },
-        jupiter:{
+        Jupiter:{
             name: "jupiter",
             fact: "Jupiter is the largest planet in our solar system, with a mass more than twice that of all other planets combined."
         },
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showinfo(event){
         const planetid = event.target.dataset.planet;
-        const data = planetData[planetData];
+        const data = planetData[planetid];
 
         if (data) {
             infoTitle.textContent = data.name;
