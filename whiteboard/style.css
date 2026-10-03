@@ -131,3 +131,25 @@ input[type="range"] {
 h1 {
     animation: fadeInDown 0.7s ease-out;
 }
+
+.home-btn:hover {
+    background: rgba(225, 255, 255, 0.12)
+}
+
+.home-btn{
+    position:fixed;
+    left:2vmin;
+    top:2vmin;
+    background:rgba(255,255,255,0.08);
+    color:#f0f0f0;
+    padding:1vmin 1.5vmin;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    z-index:9999;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.home-btn:hover {
+    background: rgba(225, 255, 255, 0.12)
+}
