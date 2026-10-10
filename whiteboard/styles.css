@@ -32,6 +32,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    animation: fadeInUp 0.7s ease-out;
 }
 
 .color-palette {
@@ -48,6 +49,15 @@ body {
     transition: transform 0.2s ease-in-out, border-color 0.2 ease-in-out, box-shadow 0.2 ease-in-out;
 }
 
+.color-swatch:hover {
+    transform: scale(1.15);
+}
+
+.color-swatch.active {
+    border-color: #808080;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #808080;
+}
 .tools {
     display: flex;
     align-items: center;
@@ -62,7 +72,11 @@ body {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s
+    transition: background-color 0.2s;
+}
+
+#clear-btn:hover {
+    background-color: limegreen;
 }
 
 input[type=range] {
@@ -75,4 +89,45 @@ input[type=range] {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     cursor: crosshair;
+    animation: zoomIn 0.7s ease-out;
+}
+
+@keyframes fadeInDown {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    animation: fadeInDown 0.7 ease-out;
 }
