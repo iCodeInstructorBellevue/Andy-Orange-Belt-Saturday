@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     
-    const canvas = document.getElementById('whiteboard');
+    const canvas = document.getElementById('Whiteboard');
     const colorSwatches = document.querySelectorAll('.color-swatch');
     const brushSizeSlider = document.getElementById('brush-size');
     const clearButton = document.getElementById('clear-btn');
@@ -49,5 +49,49 @@ window.addEventListener('load', () => {
         canvas.height = window.innerHeight * 0.6;
         setDefaultCanvasSettings();
     }
+
+    function startDrawing(e){
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY]
+    }
+
+    function stopDrawing(){
+        isDrawing = false;
+    }
+
+    function draw(e){
+        if (!isDrawing) return;
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+    }
+
+    resizeCanvas();
+
+
+
+    canvas.addEventListener('mousedown', startDrawing);
+
+    canvas.addEventListener('mousemove', draw);
+
+    canvas.addEventListener('mouseup', stopDrawing);
+
+    canvas.addEventListener('mouseout', stopDrawing);
+
+
+
+    colorSwatches.forEach(swatch => swatch.addEventListener('click', handleColorClick));
+
+    brushSizeSlider.addEventListener('input', handleBrushSizeChange);
+
+    clearButton.addEventListener('click', clearCanvas);
+
+
+
+    window.addEventListener('resize', resizeCanvas);
 
 });
