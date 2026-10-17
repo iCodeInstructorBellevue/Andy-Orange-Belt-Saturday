@@ -42,28 +42,128 @@
 ```css
 #thingy {
     background-color: red;
-    width: 300px;
+    width: 100px;
     height: 100px;
+    transition: 1s ease-in-out;
+}
+#thingy:hover {
+    width: 200px;
 }
 ```
 ...
 
-# THINGS TO DO (part 4)
- - TODO: make text fit inside of a rectangle/scrlollable inside of it
+# Add centered text inside of a rectangle
+ 1. Find a rectangle `<div>` in your HTML
+ 2. Add a `<p>` inside of the `<div>` with `id`
+```html
+<div id="my-rect">
+    <p id="my-text">I'm inside of a rectangle</p>
+</div>
+```
+ 3. Add this inside of the `<style>` tags
+```css
+#my-rect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+...
+# Get rid of the page border
+ 1. Add this to the `<style>`
+```css
+body {
+    margin: 0;
+    padding: 0;
+}
+```
 
-# THINGS TO DO (part 5)
+# Make rectangles/images/text side by side 
  1. Add this before the thing you want to center: `<div id="in-the-middle">`
  2. Add this after the thing you want to center: `</div>`
+```html
+<div id="in-the-middle">
+    <div id="rect1"></div>
+    <div id="rect2"></div>
+    <p>some text</p>
+    <div id="rect3"></div>
+    <img src="my_image.png">
+    <a href="https://google.com">my link</a>
+</div>
+```
  3. Add this inbetween the `<style>` and `</style>`
 ```css
 #in-the-middle {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+```
+ 4. Test this: what happens if you make the `flex-direction` be `column` ?
+
+...
+# Make rectangles overlap
+ 1. You have these rectangles
+```html
+  <div id="my-rectangular-thing"></div>
+  <div id="my-other-rectangular-thing"></div>
+```
+ 2. In between the `<style>` and `</style>` tags:
+```css
+#my-rectangular-thing {
+    position: absolute;
+    top: 500px;
+    left: 500px;
+
+    background-color: green;
+    width: 200px;
+    height: 300px;
+}
+
+#my-other-rectangular-thing {
+    position: absolute;
+    top: 700px;
+    left: 700px;
+    
+    background-color: red;
+    width: 200px;
+    height: 300px;
 }
 ```
 ...
 
-# THINGS TO DO (part 6)
- - TODO: make tables and lists + style them
+# Rounded rectangles
+ 1. In between the `<style>` and `</style>` tags:
+```css
+#my-rectangular-thing {
+    border-radius: 10%;
+}
+```
+...
+
+# Bordered rectangle
+ 1. In between the `<style>` and `</style>` tags:
+```css
+#my-rectangular-thing {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+}
+```
+...
+
+# Change background
+ 1. In between the `<style>` and `</style>` tags:
+```css
+body {
+    background-image: url("link-to-my-image-here");
+    background-color: red;
+}
+```
+...
+# External CSS
+ - Add this to the top of your HTML body
+```html
+<link rel="stylesheet" href="my_big_stylesheet.css">
+```
