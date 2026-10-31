@@ -7,7 +7,11 @@ const theWord = words[Math.trunc(Math.random() * words.length)];
 let pickle = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
 let wrongCount = 0;
 
-alert(pickle.join(" "));
+function showThing(word) {
+    // im hacking andy's perojerct\
+}
+
+showThing(pickle.join(" "));
 
 let correct = false;
 while (!correct) {
@@ -39,7 +43,7 @@ while (!correct) {
         await new Promise(r => setTimeout(r, 500));
     }
 
-    alert(pickle.join(" "));
+    showThing(pickle.join(" "));
 
     if (allCorrect) {
         theThing.textContent = "CORRECT";

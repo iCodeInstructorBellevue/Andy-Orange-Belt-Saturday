@@ -1,0 +1,42 @@
+<html>
+    <style>
+        #thing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #popup {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 20px 20px 50px black;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+        #close-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            color: white;
+            font-size: 100px;
+        }
+    </style>
+    <body>
+        <div id="thing">
+            <div id="popup">
+                <div id="close-button">
+                    X
+                </div>
+                <p>hello</p>
+            </div>
+        </div>
+    </body>
+</html>
