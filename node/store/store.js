@@ -15,6 +15,9 @@ function showBalls(ballsList) {
         ballContainer.append(priceText);
 
         const ballImage = document.createElement("img");
+        ballImage.addEventListener("click",function(){
+            alert("You successfully bought the ball!")
+        })
         ballImage.src = ball.image;
         ballImage.classList.add("ball");
          ballImage.classList.add(ball.name);
