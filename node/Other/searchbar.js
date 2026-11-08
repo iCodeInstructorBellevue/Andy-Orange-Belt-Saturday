@@ -2,8 +2,16 @@ let itemsList = [
     {name:"table", price: "29"},
     {name:"Flipper Zero", price: "10"},
     {name:"air", price: "100.00"},
-    {name: "leaf", price: "1000.00"},
-    {name: "shark", price: "-500"},
+    {name:"leaf", price: "1000.00"},
+    {name:"shark", price: "-500"},
+    {name:"USB Killer", price: "1.00"},
+    {name:"USB-C Killer", price: "1.00"},
+    {name:"lightning killer", price: "1.00"},
+    {name:"Mini USB Killer", price: "1.00"},
+    {name:"Hunter Cat", price: "10.00"},
+    {name:"iCopy-XS", price: "6.00"},
+    {name:"LAN Tap Pro", price: "5.00"},
+    {name:"dog", price: "100000000000000"}
 ]
 
 function onType() {
@@ -31,7 +39,7 @@ function onType() {
     }
 }
 function onResultClick(priceIn, eventIn) {
-    let carts = document.getElementById("carts")
+    let carts = document.getElementById("Cart")
     let cartText = document.createElement("p")
     cartText.innerText = eventIn.target.innerText + " :: "+ priceIn
 

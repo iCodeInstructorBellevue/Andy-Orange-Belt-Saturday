@@ -1,0 +1,19 @@
+@keyframes idkandidc {
+    0% {
+        transform: rotate(0deg) scale(0);
+    }
+    100% {
+        transform: rotate(360deg) scale(100%);
+    }
+}
+
+body {
+    background-color: black;
+    animation: idkandidc 10s linear;
+    animation-fill-mode: forwards;
+}
+#idkandidc {
+    background-color: white;
+    height: 500px;
+}
+
