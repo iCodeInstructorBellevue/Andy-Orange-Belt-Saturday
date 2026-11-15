@@ -8,7 +8,22 @@ const scene = new THREE.Scene()
 scene.background = new THREE.Color(0.2, 0.5, 0.8);
 
 const loader = new FBXLoader();
+const textureLoader = new THREE.TextureLoader();
 const object = await loader.loadAsync( 'Tyrannosaurus Rex.fbx' );
+const objectTexture = await textureLoader.loadAsync("trex.png")
+objectTexture.colorSpace = THREE.SRGBColorSpace
+objectTexture.wrapS = THREE.RepeatWrapping
+objectTexture.wrapT = THREE.RepeatWrapping
+object.traverse((child) => {
+    if (child.isMesh && child.material) {
+        child.material = new THREE.MeshBasicMaterial({ map: objectTexture })
+        console.log("hi")
+        // child.material.map = objectTexture
+        // child.castShadow = true;
+        // child.receiveShadow = true;
+        // child.material.needsUpdate = true;
+    }
+})
 scene.add( object );
 
 object.position.x = 100
@@ -63,15 +78,12 @@ renderer.render(scene, camera)
 // }
 
 const tick = () => {
-    console.log("A")
     // Update objects
     mesh.rotation.y += 0.01
 
-    console.log("B")
     // Render
 
     renderer.render(scene, camera)
-    console.log("C")
 
     window.requestAnimationFrame(tick)
 }

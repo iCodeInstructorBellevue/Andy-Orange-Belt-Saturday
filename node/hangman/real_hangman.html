@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+        #thing {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        @keyframes crazy {
+            0% {
+                transform: rotate(180deg) scale(0%);
+            }
+            100% {
+                transform: rotate(0deg) scale(100%);
+            }
+        }
+        #popup {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 20px 20px 50px black;
+            border-radius: 10px;
+
+            display: flex;
+            /*NEW*/
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            animation: crazy 2s ease-out;
+            animation-fill-mode: forwards;
+        }
+        #close-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            color: white;
+            font-size: 100px;
+        }
+        
+        #other-child {
+            /*NEW*/
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            font-size: xx-large;
+            background-color: magenta;
+            animation: crazy 2s ease-out;
+            animation-fill-mode: forwards;
+        }
+
+        #whatthe {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #secret-button {
+            position: absolute;
+            top: 85vh;
+            left: 50vw;
+            opacity: 10%;
+            transform: scale(500%);
+        }
+    </style>
+        <title>the real game</title>
+        <script src="real_hangman.js" defer></script>
+        <iframe src="https://flash-room.com/room/6ae29e80bee20e6318af513b"
+                width="500"
+                height="500"></iframe>
+    </head>
+    <body></body>
+</html>

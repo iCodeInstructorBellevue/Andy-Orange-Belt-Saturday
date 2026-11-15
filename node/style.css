@@ -1,0 +1,36 @@
+@keyframes thingy {
+    0% {
+        transform: rotate(0deg) scale(0);
+    }
+    100% {
+        transform: rotate(3600deg) scale(100%);
+    }
+}
+
+body {
+    background-color: red;
+    animation: thingy 1s linear;
+    animation-fill-mode: forwards;
+}
+#thing {
+    background-color: white;
+    height: 500px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto auto; 
+    grid-template-rows: auto auto auto; 
+    gap: 16px;
+}
+
+.small-thingy {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-thingy > img {
+    width: 100px;
+    object-fit: contain;
+}
