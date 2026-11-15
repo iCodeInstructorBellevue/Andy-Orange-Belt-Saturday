@@ -15,7 +15,7 @@ const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load('./images.png');
 
 const loader = new FBXLoader();
-const sniperMesh = await loader.loadAsync( 'Snipex Alligator.fbx' );
+const sniperMesh = await loader.loadAsync( 'portfolio project/3d/milestone-4-shedletsky.fbx' );
 
 const goemetry = new THREE.BoxGeometry(2, 2, 2)
 const meterial = new THREE.MeshBasicMaterial({ map: texture })
