@@ -12,16 +12,9 @@ const textureLoader = new THREE.TextureLoader();
 const object = await loader.loadAsync( 'Tyrannosaurus Rex.fbx' );
 const objectTexture = await textureLoader.loadAsync("trex.png")
 objectTexture.colorSpace = THREE.SRGBColorSpace
-objectTexture.wrapS = THREE.RepeatWrapping
-objectTexture.wrapT = THREE.RepeatWrapping
 object.traverse((child) => {
     if (child.isMesh && child.material) {
         child.material = new THREE.MeshBasicMaterial({ map: objectTexture })
-        console.log("hi")
-        // child.material.map = objectTexture
-        // child.castShadow = true;
-        // child.receiveShadow = true;
-        // child.material.needsUpdate = true;
     }
 })
 scene.add( object );
@@ -31,19 +24,50 @@ object.position.y = -200
 object.position.z = -100
 
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const antTexture = await textureLoader.loadAsync("ant.jpg")
+antTexture.colorSpace = THREE.SRGBColorSpace
+const material = new THREE.MeshBasicMaterial({ map: antTexture })
+// const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
-const sizes = {
-    width: 800,
-    height: 600
+let sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
 }
+window.addEventListener("resize", function () {
+    sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight
+    }
+    renderer.setSize(sizes.width, sizes.height)
+})
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
 scene.add(camera)
+
+document.addEventListener("keydown", function (event) {
+    switch (event.key) {
+        case "w": {
+            camera.position.z -= 0.1
+            break
+        }
+        case "s": {
+            camera.position.z += 0.1
+            break
+        }
+        case "a": {
+            camera.position.x -= 0.1
+            break
+        }
+        case "d": {
+            camera.position.x += 0.1
+            break
+        }
+    }
+})
 
 const canvas = document.querySelector('canvas.webgl')
 
@@ -77,14 +101,10 @@ renderer.render(scene, camera)
 //     window.requestAnimationFrame(tick)
 // }
 
-const tick = () => {
-    // Update objects
+const tick = function () {
     mesh.rotation.y += 0.01
 
-    // Render
-
     renderer.render(scene, camera)
-
     window.requestAnimationFrame(tick)
 }
 
